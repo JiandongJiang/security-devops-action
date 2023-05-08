@@ -2,14 +2,13 @@ name: MSDO ubuntu-latest
 on:
   push:
     branches:
-      - main
+      - TestMSDOGitHubAction
 
 jobs:
   sample:
     name: Microsoft Security DevOps Analysis
 
-    # MSDO runs on windows-latest.
-    # ubuntu-latest and macos-latest supporting coming soon
+    # MSDO runs on ubuntu-latest.
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +26,7 @@ jobs:
 
       # Run analyzers
     - name: Run Microsoft Security DevOps Analysis
-      uses: microsoft/security-devops-action@preview
+      uses: microsoft/security-devops-action
       id: msdo
 
       # Upload alerts to the Security tab
